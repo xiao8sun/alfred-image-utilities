@@ -60,7 +60,7 @@ for file in ds['files']:
                 new_y = ds['scale_amount']
         if generate_thumb:
             no_ext = no_ext + ".thumb"
-        im = im.resize([int(new_x), int(new_y)])
+        im = im.resize([int(new_x), int(new_y)], Image.ANTIALIAS)
     elif ds['action'] == 'bw1':
         log.debug("1 bit bw")
         im = im.convert("1")
