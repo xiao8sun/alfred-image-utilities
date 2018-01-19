@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+from __future__ import division
+
 from PIL import Image
 from workflow import Workflow
 import sys
@@ -58,7 +60,7 @@ for file in ds['files']:
                 new_y = ds['scale_amount']
         if generate_thumb:
             no_ext = no_ext + ".thumb"
-        im = im.resize([new_x, new_y])
+        im = im.resize([int(new_x), int(new_y)])
     elif ds['action'] == 'bw1':
         log.debug("1 bit bw")
         im = im.convert("1")
