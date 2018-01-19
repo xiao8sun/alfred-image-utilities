@@ -11,6 +11,9 @@ import os
 
 import json
 
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 scpt = '''
     tell application "Finder"
     set theSelection to selection
